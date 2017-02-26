@@ -1,0 +1,536 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>魔聚导航</title>
+
+    <style>
+
+        * {
+            font-size: 15px;
+            font-family: "微软雅黑 Light";
+        }
+        a {
+            text-decoration: none;
+        }
+        #page_2 > div > div > a {
+            display: block;
+            background-color: #fff;
+        }
+        span > span {
+            color: black;
+            padding:0 8px 0 8px;
+            display: inline-block;
+        }
+
+        ul {
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+        }
+        body{
+            overflow: hidden;
+        }
+        html,body{
+            margin:0px;
+            width:100%;
+            height:100%;
+            background:#000;
+        }
+
+        #next {
+            animation:ani 1s linear 0s infinite alternate;;
+        }
+
+        @keyframes ani {
+            0%{top: 0px}
+            100%{top: 30px}
+        }
+        #canvas{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+<div id="page_2" style="font-size: 20px;width: 100%;height: 100%;color: red;background-color: #482E5D;background-size:cover;opacity: 0;overflow: scroll">
+    <div style="text-align: center;font-size: 40px;color:#fff;background-color: #482E5D;width: 100%;padding:20px 0 20px 0">魔 聚 搜 索</div>
+    <div style="text-align: right;width: 100%;color:#fff">
+        <a>奇技淫巧</a>
+    </div>
+    <div class="context" style="color: black;width: 100%;height: 100px;text-align: center;" >
+        <div name="type" onmouseover="this.style.backgroundColor='#009688'" onmouseout="this.style.backgroundColor='#4491ad'" class="right" style="margin-left:18%;float: left;line-height: 40px;text-align: center;align-content:center;display: inline-block;background-color: #4491ad;width: 100px;height:100px;">
+            <img src="icon_search2.png" style="margin:auto;align-content: center;vertical-align: middle;padding-top: 15px"/><br/>
+            搜索
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="wangpansousuo">
+            <a>网盘资源</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="BTsousuo">
+            <a>BT搜索</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="dianzishu">
+            <a>电子书</a>
+        </div>
+    </div>
+    <div style="color: black;width: 100%;height: 100px;text-align: center">
+        <div name="type" style="margin-left:18%;line-height: 40px;text-align: center;align-content:center;display: block;background-color: #056a88;float:left;width: 100px;height:100px;">
+            <img src="icon_film.png" style="margin:auto;align-content: center;vertical-align: middle;padding-top: 15px"/><br/>
+            影视
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="dianying">
+            <a>电影</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="meiju">
+            <a>美剧</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="dongman">
+            <a>动漫</a>
+        </div>
+    </div>
+    <div style="color: black;width: 100%;height: 100px;text-align: center">
+        <div name="type" style="margin-left:18%;float: left;line-height: 40px;text-align: center;align-content:center;display: block;background-color: #157b9a;width: 100px;height:100px;">
+            <img src="icon_music.png" style="margin:auto;align-content: center;vertical-align: middle;padding-top: 15px"/><br/>
+            音乐
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="wushun">
+            <a>无损</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="zaixian">
+            <a>在线</a>
+        </div>
+    </div>
+        <div style="color: black;width: 100%;height: 100px;text-align: center">
+            <div name="type" style="margin-left:18%;float:left;line-height: 40px;text-align: center;align-content:center;display: block;background-color: #6a9cb3;width: 100px;height:100px;">
+                <img src="icon_bag.png" style="margin:auto;align-content: center;vertical-align: middle;padding-top: 15px"/><br/>
+                软件
+            </div>
+            <div style="float: left;width: 100px;height:100px;background-color: #fff" id="pojieruanjian">
+                <a>破解软件</a>
+            </div>
+            <div style="float: left;width: 100px;height:100px;background-color: #fff" id="lvseruanjian">
+                <a>绿色软件</a>
+            </div>
+            <div style="float: left;width: 100px;height:100px;background-color: #fff" id="jingxuanruanjian">
+                <a>精选软件</a>
+            </div>
+        </div>
+    <div style="color: black;width: 100%;height: 100px;text-align: center">
+        <div name="type" style="margin-left:18%;float:left;line-height: 40px;text-align: center;align-content:center;display: block;background-color: #4f7988;width: 100px;height:100px;">
+            <img src="icon_image.png" style="margin:auto;align-content: center;vertical-align: middle;padding-top: 15px"/><br/>
+            图片
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="diannaobizhi">
+            <a>电脑壁纸</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="shejitupian">
+            <a>设计图片</a>
+        </div>
+    </div>
+    <div style="color: black;width: 100%;height: 100px;text-align: center">
+        <div name="type" style="margin-left:18%;float:left;line-height: 40px;text-align: center;align-content:center;display: block;background-color: #155a6d;width: 100px;height:100px;">
+            <img src="icon_genius.png" style="margin:auto;align-content: center;vertical-align: middle;padding-top: 15px"/><br/>
+            专业
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="wangluojishu">
+            <a>网络技术</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="bokedaohang">
+            <a>博客导航</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="gongkaike">
+            <a>公开课</a>
+        </div>
+        <div style="float: left;width: 100px;height:100px;background-color: #fff" id="kaoyan">
+            <a>考研</a>
+        </div>
+    </div>
+
+</div>
+<div style=";position: absolute;width: 100%;height: 100%;transition: all 2.5s;top:0;margin-top:0;box-shadow: 0 0 350px 0 #3e3e3e;" id="page_1">
+<span style="position:absolute;width:100%;height:30px;z-index: 100;align-content: center;text-align: center">
+    <span style="font-size:60px;color:#D695C8;font-family: '微软雅黑 Light';">魔 聚 搜 索</span>
+    <h3 style="color:#D695C8;font-family: '微软雅黑 Light';margin-left: 150px;margin-bottom: 30%">你想要的都有</h3>
+    <span id="next" style="font-size:160px;color:rgba(255,255,255,0.56);font-family: '微软雅黑 Light';cursor: pointer;position:relative;top:0px" onclick="scrollPage()">﹀</span>
+</span>
+<canvas id="canvas" ></canvas>
+</div>
+
+<script>
+    /**
+     * 配置分类下的子元素
+     * @param arrName 分类名，ID数组  wangpansousuo
+     * @param arrChild 分类下的子元素 网站名称和网站地址字符串 wangpansousuo-.....
+     */
+    function config(arrName, arrChild){
+        if(arrName.length === arrChild.length) {
+            for (var i = 0; i < arrName.length; i ++) {
+                console.log(arrName[i] + arrChild[i]);
+                //设置分类对应的子元素cookieName + cookieValue
+                document.cookie = arrName[i] +"="+ arrChild[i];
+                //通过cookie名获得cookie值然后分解成数组
+                var arr = getCookieValue(arrName[i]).split('|');
+                //获得当前元素
+                var ele = document.getElementById(arrName[i]);
+                var arrChild1 = new Array();//分类下的子类
+//                //console.log(arr[i]);
+
+                for(var j = 0; j < arr.length; j ++){
+                    arrChild1 = arr[j].split('-');
+                    var a = document.createElement("a");
+                    a.innerHTML = arrChild1[0];
+                    a.setAttribute('href', arrChild1[1]);
+                    ele.appendChild(a);
+                }
+//                var a = document.createElement("a");
+//                a.innerHTML = arrChild[0];
+//                a.setAttribute('href', arrChild[1]);
+//                ele.appendChild(a);
+            }
+             //'wangpansousuo=胖次搜索-http://www.panc.cc/|盘多多-http://www.panduoduo.net/|';
+        }
+    }
+    window.onload = function() {
+        var allFenleiName = [
+            'wangpansousuo',
+            'BTsousuo',
+            'dianzishu',
+            'dianying',
+            'meiju',
+            'dongman',
+            'wushun',
+            'zaixian',
+            'pojieruanjian',
+            'lvseruanjian',
+            'jingxuanruanjian',
+            'diannaobizhi',
+            'shejitupian',
+            'wangluojishu',
+            'bokedaohang',
+            'gongkaike',
+            'kaoyan'
+        ];
+        var allFenleiChild = [
+            '胖次搜索-http://www.panc.cc/|盘多多-http://www.panduoduo.net/|',
+            '手撕包菜-http://www.shousibaocai.cc/|',
+            '鸠摩搜索-https://www.jiumodiary.com/|',
+            '全看网-http://www.quankan.tv/|',
+            '影视大全-http://www.yingshidaquan.cc/|',
+            '小浣熊-http://www.xiaohx.net/movie|',
+            'XICXI-http://www.xicxi.com/|',
+            '网易云音乐-http://music.163.com/|',
+            '大眼仔-http://www.dayanzai.me/|',
+            '绿色资源网-http://www.downcc.com/|',
+            '异次元-http://www.iplaysoft.com/|',
+            'Desktop-https://wallpaperscraft.com/|Papers.co-http://papers.co/',
+            'Coolors-https://coolors.co/|千图网-http://www.58pic.com/|',
+            '51自学网-http://www.51zxw.net/|传智播客-http://www.itcast.cn/|',
+            'MSDN-http://blog.csdn.net/|',
+            '网易公开课-https://open.163.com/|',
+            '考研资源库-http://www.kaoyan.com/|大家论坛-http://club.topsage.com/|'
+        ];
+        config(allFenleiName, allFenleiChild);
+        var types = document.getElementsByName("type");
+
+        for(var i = 0; i < types.length; i ++) {
+             console.log(function (i){
+                types[i].indexCode = i;
+            }(i))
+            types[i].addEventListener("click", function () {
+                //alert(this.indexCode);
+                location.href = 'polymerization.html?typeCode='+this.indexCode;
+            });
+        }
+    }
+    //获取cookie
+    function getCookieValue(cookieName)
+    {
+        var cookieEndAt;
+        var cookieValue = document.cookie;
+        var cookieStartAt = cookieValue.indexOf(""+cookieName+"=");
+        if(cookieStartAt==-1)
+        {
+            cookieStartAt = cookieValue.indexOf(cookieName+"=");
+        }
+        if(cookieStartAt==-1)
+        {
+            cookieValue = null;
+        }
+        else
+        {
+            cookieStartAt = cookieValue.indexOf("=",cookieStartAt)+1;
+            cookieEndAt = cookieValue.indexOf(";",cookieStartAt);
+            if(cookieEndAt==-1)
+            {
+                cookieEndAt = cookieValue.length;
+            }
+            cookieValue = unescape(cookieValue.substring(cookieStartAt,cookieEndAt));//解码latin-1
+        }
+        return cookieValue;
+    }
+
+    var isPlay = true;
+    function scrollPage(){
+        console.log("hello");
+        document.getElementById("page_1").style.marginTop = '-100%';
+        document.getElementById("page_2").style.opacity = '1';
+        setTimeout(function(){
+            isPlay = false;
+        },2000)
+    }
+    function project3D(x,y,z,vars){
+
+        var p,d;
+        x-=vars.camX;
+        y-=vars.camY-8;
+        z-=vars.camZ;
+        p=Math.atan2(x,z);
+        d=Math.sqrt(x*x+z*z);
+        x=Math.sin(p-vars.yaw)*d;
+        z=Math.cos(p-vars.yaw)*d;
+        p=Math.atan2(y,z);
+        d=Math.sqrt(y*y+z*z);
+        y=Math.sin(p-vars.pitch)*d;
+        z=Math.cos(p-vars.pitch)*d;
+        var rx1=-1000;
+        var ry1=1;
+        var rx2=1000;
+        var ry2=1;
+        var rx3=0;
+        var ry3=0;
+        var rx4=x;
+        var ry4=z;
+        var uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1);
+        var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc;
+        var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(rx1-rx3))/uc;
+        if(!z)z=0.000000001;
+        if(ua>0&&ua<1&&ub>0&&ub<1){
+            return {
+                x:vars.cx+(rx1+ua*(rx2-rx1))*vars.scale,
+                y:vars.cy+y/z*vars.scale,
+                d:(x*x+y*y+z*z)
+            };
+        }else{
+            return { d:-1 };
+        }
+    }
+
+
+    function elevation(x,y,z){
+
+        var dist = Math.sqrt(x*x+y*y+z*z);
+        if(dist && z/dist>=-1 && z/dist <=1) return Math.acos(z / dist);
+        return 0.00000001;
+    }
+
+
+    function rgb(col){
+
+        col += 0.000001;
+        var r = parseInt((0.5+Math.sin(col)*0.5)*16);
+        var g = parseInt((0.5+Math.cos(col)*0.5)*16);
+        var b = parseInt((0.5-Math.sin(col)*0.5)*16);
+        return "#"+r.toString(16)+g.toString(16)+b.toString(16);
+    }
+
+
+    function interpolateColors(RGB1,RGB2,degree){
+
+        var w2=degree;
+        var w1=1-w2;
+        return [w1*RGB1[0]+w2*RGB2[0],w1*RGB1[1]+w2*RGB2[1],w1*RGB1[2]+w2*RGB2[2]];
+    }
+
+
+    function rgbArray(col){
+
+        col += 0.000001;
+        var r = parseInt((0.5+Math.sin(col)*0.5)*256);
+        var g = parseInt((0.5+Math.cos(col)*0.5)*256);
+        var b = parseInt((0.5-Math.sin(col)*0.5)*256);
+        return [r, g, b];
+    }
+
+
+    function colorString(arr){
+
+        var r = parseInt(arr[0]);
+        var g = parseInt(arr[1]);
+        var b = parseInt(arr[2]);
+        return "#"+("0" + r.toString(16) ).slice (-2)+("0" + g.toString(16) ).slice (-2)+("0" + b.toString(16) ).slice (-2);
+    }
+
+
+    function process(vars){
+
+
+        if(vars.points.length<vars.initParticles) for(var i=0;i<5;++i) spawnParticle(vars);
+        var p,d,t;
+
+        p = Math.atan2(vars.camX, vars.camZ);
+        d = Math.sqrt(vars.camX * vars.camX + vars.camZ * vars.camZ);
+        d -= Math.sin(vars.frameNo / 80) / 25;
+        t = Math.cos(vars.frameNo / 300) / 165;
+        vars.camX = Math.sin(p + t) * d;
+        vars.camZ = Math.cos(p + t) * d;
+        vars.camY = -Math.sin(vars.frameNo / 220) * 15;
+        vars.yaw = Math.PI + p + t;
+        vars.pitch = elevation(vars.camX, vars.camZ, vars.camY) - Math.PI / 2;
+
+        var t;
+        for(var i=0;i<vars.points.length;++i){
+
+            x=vars.points[i].x;
+            y=vars.points[i].y;
+            z=vars.points[i].z;
+            d=Math.sqrt(x*x+z*z)/1.0075;
+            t=.1/(1+d*d/5);
+            p=Math.atan2(x,z)+t;
+            vars.points[i].x=Math.sin(p)*d;
+            vars.points[i].z=Math.cos(p)*d;
+            vars.points[i].y+=vars.points[i].vy*t*((Math.sqrt(vars.distributionRadius)-d)*2);
+            if(vars.points[i].y>vars.vortexHeight/2 || d<.25){
+                vars.points.splice(i,1);
+                spawnParticle(vars);
+            }
+        }
+    }
+
+    function drawFloor(vars){
+
+        var x,y,z,d,point,a;
+        for (var i = -25; i <= 25; i += 1) {
+            for (var j = -25; j <= 25; j += 1) {
+                x = i*2;
+                z = j*2;
+                y = vars.floor;
+                d = Math.sqrt(x * x + z * z);
+                point = project3D(x, y-d*d/85, z, vars);
+                if (point.d != -1) {
+                    size = 1 + 15000 / (1 + point.d);
+                    a = 0.15 - Math.pow(d / 50, 4) * 0.15;
+                    if (a > 0) {
+                        vars.ctx.fillStyle = colorString(interpolateColors(rgbArray(d/26-vars.frameNo/40),[0,128,32],.5+Math.sin(d/6-vars.frameNo/8)/2));
+                        vars.ctx.globalAlpha = a;
+                        vars.ctx.fillRect(point.x-size/2,point.y-size/2,size,size);
+                    }
+                }
+            }
+        }
+        vars.ctx.fillStyle = "#82f";
+        for (var i = -25; i <= 25; i += 1) {
+            for (var j = -25; j <= 25; j += 1) {
+                x = i*2;
+                z = j*2;
+                y = -vars.floor;
+                d = Math.sqrt(x * x + z * z);
+                point = project3D(x, y+d*d/85, z, vars);
+                if (point.d != -1) {
+                    size = 1 + 15000 / (1 + point.d);
+                    a = 0.15 - Math.pow(d / 50, 4) * 0.15;
+                    if (a > 0) {
+                        vars.ctx.fillStyle = colorString(interpolateColors(rgbArray(-d/26-vars.frameNo/40),[32,0,128],.5+Math.sin(-d/6-vars.frameNo/8)/2));
+                        vars.ctx.globalAlpha = a;
+                        vars.ctx.fillRect(point.x-size/2,point.y-size/2,size,size);
+                    }
+                }
+            }
+        }
+    }
+
+    function sortFunction(a,b){
+        return b.dist-a.dist;
+    }
+
+    function draw(vars){
+
+        vars.ctx.globalAlpha=.15;
+        vars.ctx.fillStyle="#000";
+        vars.ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawFloor(vars);
+
+        var point,x,y,z,a;
+        for(var i=0;i<vars.points.length;++i){
+            x=vars.points[i].x;
+            y=vars.points[i].y;
+            z=vars.points[i].z;
+            point=project3D(x,y,z,vars);
+            if(point.d != -1){
+                vars.points[i].dist=point.d;
+                size=1+vars.points[i].radius/(1+point.d);
+                d=Math.abs(vars.points[i].y);
+                a = .8 - Math.pow(d / (vars.vortexHeight/2), 1000) * .8;
+                vars.ctx.globalAlpha=a>=0&&a<=1?a:0;
+                vars.ctx.fillStyle=rgb(vars.points[i].color);
+                if(point.x>-1&&point.x<vars.canvas.width&&point.y>-1&&point.y<vars.canvas.height)vars.ctx.fillRect(point.x-size/2,point.y-size/2,size,size);
+            }
+        }
+        vars.points.sort(sortFunction);
+    }
+
+
+    function spawnParticle(vars){
+
+        var p,ls;
+        pt={};
+        p=Math.PI*2*Math.random();
+        ls=Math.sqrt(Math.random()*vars.distributionRadius);
+        pt.x=Math.sin(p)*ls;
+        pt.y=-vars.vortexHeight/2;
+        pt.vy=vars.initV/20+Math.random()*vars.initV;
+        pt.z=Math.cos(p)*ls;
+        pt.radius=200+800*Math.random();
+        pt.color=pt.radius/1000+vars.frameNo/250;
+        vars.points.push(pt);
+    }
+
+    function frame(vars) {
+
+        if (!isPlay) return ; //停止执行首页动画
+        if(vars === undefined){
+            var vars={};
+            vars.canvas = document.querySelector("canvas");
+            vars.ctx = vars.canvas.getContext("2d");
+            vars.canvas.width = document.body.clientWidth;
+            vars.canvas.height = document.body.clientHeight;
+            window.addEventListener("resize", function(){
+                vars.canvas.width = document.body.clientWidth;
+                vars.canvas.height = document.body.clientHeight;
+                vars.cx=vars.canvas.width/2;
+                vars.cy=vars.canvas.height/2;
+            }, true);
+            vars.frameNo=0;
+
+            vars.camX = 0;
+            vars.camY = 0;
+            vars.camZ = -14;
+            vars.pitch = elevation(vars.camX, vars.camZ, vars.camY) - Math.PI / 2;
+            vars.yaw = 0;
+            vars.cx=vars.canvas.width/2;
+            vars.cy=vars.canvas.height/2;
+            vars.bounding=10;
+            vars.scale=500;
+            vars.floor=26.5;
+
+            vars.points=[];
+            vars.initParticles=700;
+            vars.initV=.01;
+            vars.distributionRadius=800;
+            vars.vortexHeight=25;
+        }
+
+        vars.frameNo++;
+        requestAnimationFrame(function() {
+            frame(vars);
+        });
+
+        process(vars);
+        draw(vars);
+    }
+    frame();
+
+</script>
+</body>
+</html>
